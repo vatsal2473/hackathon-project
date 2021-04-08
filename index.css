@@ -1,0 +1,220 @@
+body{
+	margin: 0px;
+}
+      /*    Navigation bar   */
+
+.navigation{
+	/*background-color: #291742;*/
+	margin: 0px;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+}
+
+.navBtn{
+	padding: 1.5rem;
+	margin: 1.2rem;
+	color: black;
+}
+
+.navItems{
+	color: white;
+	font-size: 1.2rem;
+	margin: 1.2rem;
+}
+
+.navItems:hover{
+	color: grey;
+	cursor: pointer;
+}
+
+nav a:active{
+	color: black;
+}
+
+    /*Home Section */
+
+#home{
+    display: flex;
+    padding: 4px 200px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 660px;
+}
+
+#home::before{
+    content: "";
+    background: url(images5.jpeg) no-repeat center center/cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    /*margin-top: 9rem;*/
+}
+
+#home h1{
+    color: rgb(16 20 35);
+    text-align: center; 
+    justify-content: center; 
+    opacity: 1.5;
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#home p{
+    color: rgb(16 20 35);
+    text-align: center;
+    opacity: 2.5;
+    font-weight: bold;
+    /* text-shadow: 2px 3px white; */
+    font-size: 1.4rem;
+    padding: 10px;
+}
+.btn{
+	text-align: center;
+    height: 40px;
+    width: 150px;
+    background-color: rgb(165 143 140);
+    border-style: none;
+    border-radius: 15px;
+    padding: 4px;
+    margin-top:30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all;
+    transition-duration: 0.4s;
+    font-weight: bold;
+}
+
+.btn:hover{
+    background-color: black;
+    color: white;
+}  
+
+
+         /*Service Section  */
+
+#services{
+    display: flex;
+    margin: 30px;
+}
+
+#services-container{
+	text-align: center;
+	justify-content: center;
+}
+
+.h-primary{
+	font-size: 2rem;
+}
+
+.h-secondary{
+	margin: 0.7rem;
+	font-size: 1.5rem;	
+}
+
+#services .box{
+    border: 2px solid brown;
+    padding: 25px;
+    margin: 12px 10px;
+    border-radius: 14px;
+    background-color: rgb(255 242 242);
+}
+#services .box img{
+    padding-top: 10px;
+    display: block;
+    margin: auto;
+    height: 100px;
+}
+
+.box img{
+	height: 7rem;
+}
+
+
+
+    /*copyright section*/
+
+#copyright::before{
+     content: "";
+     background-color: black;
+     position: absolute;
+     height: 25px;
+     width: 100%;
+     z-index: -1;
+     opacity: 0.9;
+}
+
+#copyright-container{
+    color: white;
+    text-align: center;
+}
+
+a:link {
+    color: green;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: green;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: red;
+  }
+  
+  /* selected link */
+  a:active {
+    color: yellow;
+  } 
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+  }
+

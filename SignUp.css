@@ -1,0 +1,15 @@
+
+.p-secondary a{
+	color: blue;
+}
+.p-secondary a:hover{
+	cursor: pointer;
+	color: purple;
+}
+
+/*sign up region*/
+
+.form-select{
+	padding: 0.4rem;
+	border-radius: 0.5rem;
+}
