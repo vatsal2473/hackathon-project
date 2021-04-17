@@ -6,6 +6,75 @@
 	<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="restaurants.css">
 	<link rel="stylesheet" type="text/css" href="login.css">
+  <style>
+    *{
+      padding:0;
+      margin: 0;
+      box-sizing: border-box;
+      outline: none;
+    }
+    body{
+      font-family: 'Poppins',sans-serif;
+    }
+    .wrapper{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 70px 0;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .menu,
+    .content{
+      width: 100%;
+    }
+    select{
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: 'Poppins' sans-serif;
+      border:none;
+      border-radius: 8px;
+      border: 2px solid #3f51b5;
+      box-shadow: 0 15px 15px #efefef;
+
+    }
+    .content{
+      margin: 30px 0;
+    }
+    .content .data{
+      padding: 25px;
+      background-color: #fff;
+      border: 2px solid #8bc34a;
+      border-radius: 8px;
+    }
+    .content p{
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid gainsboro;
+    }
+    .content p:last-child{
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .content p b{
+      font-weight: 700;
+    }
+    .content p span{
+      float: right;
+      font-weight:normal;
+    }
+    .image{
+      text-align: center;
+    }
+    .data{
+      display: none;
+    }
+    
+    
+  </style>
 </head>
 <body>
 
@@ -58,31 +127,173 @@
         <h1 class="title-font font-medium text-3xl text-gray-900"> Search restaurant you wish to have your meal at</h1>
     </div>
  </div>
-	 <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col w-full mt-10 md:mt-0 city-ctn"  >
- 			<div class="relative mb-4">
-              <label for="full-name" class="leading-7 text-sm text-gray-600">You are in: </label>
-              <select class="form-select" aria-label="Default select example">
-                <option selected>Ahmedabad</option>
-                <option value="2">Ahmedabad</option>
-                <option value="3">surat</option>
+<!--
+	 <div class="wrapper">
+ 			<div class="menu">
+              <select id="name" onchange = "getSelectValue();" class="form-select" aria-label="Default select example">
+                <option value="1">Ahmedabad</option>
+                <option value="2">surat</option>
+                <option value="3">jaipur</option>
               </select>
+            </div>-->
+            <div class="wrapper">
+              <div class="menu">
+            <select id="select" value="Test1" name="Test1" onchange="selectChanged()">
+              <option value="1">Ahmedabad</option>
+              <option value="2">Jaipur</option>
+              <option value="3">Mumbai</option>
+              <option value="4">Banglore</option>
+              <option value="5">Surat</option>
+            </select> 
             </div>
-    </div>
+            </div>
+<!--
+<div class="content">
+  <div id="1" class="data">
+    <p class="image">
+      <img src="https://lh3.googleusercontent.com/ZoAF9tq1SAMEDFmeAiPZopn7c0IV0DRska7ApeFVvORwzF-10ylTKukgrjeIjVPBxWElBMjb6mpRfLwT2OnmWHl1MZV9LxJS7Xkl44wFkSxtkBccHQsrm16DQ2qkjgAqXmVWTxOgMw=w2400",alt="">
+    </p>
+    <p><b>comfy restaurant</b></p>
+    <p></b><a href="hotels/comfy_restaurant.html">View Menu</a></b></p>
+  </div>
+  <div id="2" class="data">
+    <p><b>ashirwad restaurant</b></p>
+    <p></b><a href="hotels/ashirwad_restaurant.html">View Menu</a></b></p>
+  </div>
+  <div id="3" class="data">
+    <p><b>legands of punjab</b></p>
+    <p></b><a href="hotels/lop.html">View Menu</a></b></p>
+  </div>
+</div>
+-->
 
+<div class="container">
+  <div id="box1" class="box hidden">
+    <p class="image">
+      <img src="https://lh3.googleusercontent.com/ZoAF9tq1SAMEDFmeAiPZopn7c0IV0DRska7ApeFVvORwzF-10ylTKukgrjeIjVPBxWElBMjb6mpRfLwT2OnmWHl1MZV9LxJS7Xkl44wFkSxtkBccHQsrm16DQ2qkjgAqXmVWTxOgMw=w2400",alt="">
+    </p>
+    <p><b>comfy restaurant</b></p>
+    <p></b><a href="hotels/comfy_restaurant.html">View Menu</a></b></p>
+  </div>
+  <div id="box2" class="box hidden">
+    <p class="image">
+    <img src="https://lh3.googleusercontent.com/iuj8GTAJFtKD4MSesJW_sk89VHeD7FpM_ZxqkFDdZQeeKyFlSz-z2ZCINxAVSlfzFrl4MZIsC8NFihRmajPHnhg-oEje_XPZFOdPtmIbsxsCGJYrFiL9EEpm6HOOfIKrUE1h8ev8Yw=w600-h315-p-k",alt="">
+    </p>
+    <p><b>ashirwad restaurant</b></p>
+    <p></b><a href="hotels/ashirwad_restaurant.html">View Menu</a></b></p>
+  </div>
+  <div id="box3" class="box hidden">
+    <p class="image">
+    <img src="https://lh3.googleusercontent.com/TLp-Dw3v-qPHH7tm-o6Dnq3tdiU8XirfHnQZqq_JUOqpbzIkceI0U7A_oE9R-lM3AiXAd31B9RxWSa_8_KBDZnFvAJayr8JWyt4AvVRtYFDUEPVX3NUC9FGfBGHqTByjX6LJmmzynA=w2400",alt="">
+    </p>
+    <p><b>legands of punjab</b></p>
+    <p></b><a href="hotels/lop.html">View Menu</a></b></p>
+  </div>
+  <div id="box4" class="box hidden">
+    <p class="image">
+      <img src="https://lh3.googleusercontent.com/XAyOlKJqHsNo19hT-htaxz6Q1ED27mfMjnsIugR3F6nii1lx2efF702tOoZfI3XERRDr7jYvhgdD9yET5unszT_324cXBboSKbUj74tbIQaQzky_Bl6AxBAnNisiRdO9nnlSL5OlnA=w2400",alt="">
+      </p>
+      <p><b>Bagh one restaurent</b></p>
+      <p></b><a href="hotels/bagh_on_restaurant.html">View Menu</a></b></p>
+  </div>
+  <div id="box5" class="box hidden">
+    <p class="image">
+      <img src="https://lh3.googleusercontent.com/ZoAF9tq1SAMEDFmeAiPZopn7c0IV0DRska7ApeFVvORwzF-10ylTKukgrjeIjVPBxWElBMjb6mpRfLwT2OnmWHl1MZV9LxJS7Xkl44wFkSxtkBccHQsrm16DQ2qkjgAqXmVWTxOgMw=w2400",alt="">
+      </p>
+      <p><b>Kabir Restaurant</b></p>
+      <p></b><a href="hotels/kabir.html">View Menu</a></b></p>
+  </div>
+  <div id="box6" class="box hidden">
+    <p class="image">
+      <img src="https://lh3.googleusercontent.com/f1XmqHb4jqpkiQ5p_nle0cjifN9UpWIq4nfK4TTTxXFxw00kfkDi3_lRfT8f2p04K6o65Io7Ru1oQfwlwgLHhgW427jBhqMQs2UNacQIyYwqXhZKO4EOzzOU7349TVu4lXVrzPpEHQ=w2400",alt="">
+      </p>
+      <p><b>Nilkanth Restaurant</b></p>
+      <p></b><a href="hotels/nilkanth.html">View Menu</a></b></p>
+  </div>
+  <div id="box7" class="box hidden">
+    <p class="image">
+      <img src="https://lh3.googleusercontent.com/f1XmqHb4jqpkiQ5p_nle0cjifN9UpWIq4nfK4TTTxXFxw00kfkDi3_lRfT8f2p04K6o65Io7Ru1oQfwlwgLHhgW427jBhqMQs2UNacQIyYwqXhZKO4EOzzOU7349TVu4lXVrzPpEHQ=w2400",alt="">
+      </p>
+      <p><b>The Rajput Room</b></p>
+      <p></b><a href="hotels/TheRajputRoom.html">View Menu</a></b></p>
+  </div>
+  <div id="box8" class="box hidden">
+    <p class="image">
+      <img src="https://lh3.googleusercontent.com/f1XmqHb4jqpkiQ5p_nle0cjifN9UpWIq4nfK4TTTxXFxw00kfkDi3_lRfT8f2p04K6o65Io7Ru1oQfwlwgLHhgW427jBhqMQs2UNacQIyYwqXhZKO4EOzzOU7349TVu4lXVrzPpEHQ=w2400",alt="">
+      </p>
+      <p><b>Mosaic</b></p>
+      <p></b><a href="hotels/Mosaic.html">View Menu</a></b></p>
+  </div>
+  <div id="box9" class="box hidden">
+    <p class="image">
+      <img src="https://lh3.googleusercontent.com/f1XmqHb4jqpkiQ5p_nle0cjifN9UpWIq4nfK4TTTxXFxw00kfkDi3_lRfT8f2p04K6o65Io7Ru1oQfwlwgLHhgW427jBhqMQs2UNacQIyYwqXhZKO4EOzzOU7349TVu4lXVrzPpEHQ=w2400",alt="">
+      </p>
+      <p><b>Samode Haveli</b></p>
+      <p></b><a href="hotels/SamodeHaveli.html">View Menu</a></b></p>
+  </div>
+  <div id="box10" class="box hidden">
+    <p class="image">
+      <img src="https://lh3.googleusercontent.com/f1XmqHb4jqpkiQ5p_nle0cjifN9UpWIq4nfK4TTTxXFxw00kfkDi3_lRfT8f2p04K6o65Io7Ru1oQfwlwgLHhgW427jBhqMQs2UNacQIyYwqXhZKO4EOzzOU7349TVu4lXVrzPpEHQ=w2400",alt="">
+      </p>
+      <p><b>Suvarna Mahal</b></p>
+      <p></b><a href="hotels/SuvarnaMahal.html">View Menu</a></b></p>
+  </div>
+  <div id="box11" class="box hidden">
+    <p class="image">
+      <img src="https://lh3.googleusercontent.com/f1XmqHb4jqpkiQ5p_nle0cjifN9UpWIq4nfK4TTTxXFxw00kfkDi3_lRfT8f2p04K6o65Io7Ru1oQfwlwgLHhgW427jBhqMQs2UNacQIyYwqXhZKO4EOzzOU7349TVu4lXVrzPpEHQ=w2400",alt="">
+      </p>
+      <p><b>Jaipur Adda</b></p>
+      <p></b><a href="hotels/jaipuradda.html">View Menu</a></b></p>
+  </div>
+  <div id="box12" class="box hidden">
+    <p class="image">
+      <img src="https://lh3.googleusercontent.com/f1XmqHb4jqpkiQ5p_nle0cjifN9UpWIq4nfK4TTTxXFxw00kfkDi3_lRfT8f2p04K6o65Io7Ru1oQfwlwgLHhgW427jBhqMQs2UNacQIyYwqXhZKO4EOzzOU7349TVu4lXVrzPpEHQ=w2400",alt="">
+      </p>
+      <p><b>The Verandah</b></p>
+      <p></b><a href="hotels/TheVerandah.html">View Menu</a></b></p>
+  </div>
+</div>
 
+<script>
+  var display = {
+  1: [1,2,3,4,5,6],
+  2: [7,8,9,10,11,12],
+  3: [13,14,15,16,17,18],
+  4: [],
+  5: [],
+  6: []
+}
 
-    	<!-------------------- Section 2 ---------------------->
+function selectChanged() {
+  var sel = document.getElementById("select");
+  for (var i = 1; i <= 18; i++) {
+		document.getElementById("box" + i).classList.add("hidden");
+  }
+  display[sel.value].forEach(function(i) {
+		document.getElementById("box" + i).classList.remove("hidden");
+  });
+}
 
-
-
-<section class="text-gray-600 body-font">
+</script>
+<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+</script>
+<script>
+  $(document).ready(function(){
+    $("#name").on('change',function(){
+      $(".data").hide();
+      $("#"+$(this).val()).fadeIn(700);
+    }).change();
+  });
+</script>
+-->
+<!-- <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
    
 
-            <!--- Comfy Restaurant ---->
+           
     <div class="flex flex-wrap -m-4">
       <div class="xl:w-1/3 md:w-1/2 p-4">
-        <a>
         <div class="border border-gray-200 p-6 rounded-lg rest-ctn">
             <img alt="problem downloading the image" src="https://lh3.googleusercontent.com/ZoAF9tq1SAMEDFmeAiPZopn7c0IV0DRska7ApeFVvORwzF-10ylTKukgrjeIjVPBxWElBMjb6mpRfLwT2OnmWHl1MZV9LxJS7Xkl44wFkSxtkBccHQsrm16DQ2qkjgAqXmVWTxOgMw=w2400"> <br>
           <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Comfy Restaurant</h2>
@@ -90,12 +301,10 @@
           <p class="leading-relaxed text-base text-gray-600">Punjabi, Chinese, Mexican</p>
           <br>
           <a href="hotels/comfy_restaurant.html">View Menu</a>
-        </a>
         </div>
       </div>
-      
 
-      		<!---- Ashirwad Restaurant --->
+      		
       <div class="xl:w-1/3 md:w-1/2 p-4">
         <div class="border border-gray-200 p-6 rounded-lg rest-ctn">
             <img alt="problem downloading the image" src="https://lh3.googleusercontent.com/iuj8GTAJFtKD4MSesJW_sk89VHeD7FpM_ZxqkFDdZQeeKyFlSz-z2ZCINxAVSlfzFrl4MZIsC8NFihRmajPHnhg-oEje_XPZFOdPtmIbsxsCGJYrFiL9EEpm6HOOfIKrUE1h8ev8Yw=w600-h315-p-k"> <br>
@@ -108,7 +317,7 @@
       </div>
       
 
-      		<!---- Bagh One Restaurant --->
+      	
       <div class="xl:w-1/3 md:w-1/2 p-4">
         <div class="border border-gray-200 p-6 rounded-lg rest-ctn">
             <img alt="problem downloading the image" src="https://lh3.googleusercontent.com/XAyOlKJqHsNo19hT-htaxz6Q1ED27mfMjnsIugR3F6nii1lx2efF702tOoZfI3XERRDr7jYvhgdD9yET5unszT_324cXBboSKbUj74tbIQaQzky_Bl6AxBAnNisiRdO9nnlSL5OlnA=w2400"> <br>
@@ -121,7 +330,7 @@
       </div>
 
 
-      		<!-- Kabir Restaurant --------->
+      		
       <div class="xl:w-1/3 md:w-1/2 p-4">
         <div class="border border-gray-200 p-6 rounded-lg rest-ctn">
             <img alt="problem downloading the image" src="https://lh3.googleusercontent.com/ZoAF9tq1SAMEDFmeAiPZopn7c0IV0DRska7ApeFVvORwzF-10ylTKukgrjeIjVPBxWElBMjb6mpRfLwT2OnmWHl1MZV9LxJS7Xkl44wFkSxtkBccHQsrm16DQ2qkjgAqXmVWTxOgMw=w2400"> <br>
@@ -134,7 +343,7 @@
       </div>
 
 
-      		<!-- Legands of Punjab -------->
+      		<!-- Legands of Punjab --------
       <div class="xl:w-1/3 md:w-1/2 p-4">
         <div class="border border-gray-200 p-6 rounded-lg rest-ctn">
             <img alt="problem downloading the image" src="https://lh3.googleusercontent.com/TLp-Dw3v-qPHH7tm-o6Dnq3tdiU8XirfHnQZqq_JUOqpbzIkceI0U7A_oE9R-lM3AiXAd31B9RxWSa_8_KBDZnFvAJayr8JWyt4AvVRtYFDUEPVX3NUC9FGfBGHqTByjX6LJmmzynA=w2400"> <br>
@@ -147,7 +356,7 @@
       </div>
 
 
-      		<!-- Nilkanth Restaurant ------>
+      		<!-- Nilkanth Restaurant ------
       <div class="xl:w-1/3 md:w-1/2 p-4">
         <div class="border border-gray-200 p-6 rounded-lg rest-ctn">
             <img alt="problem downloading the image" src="https://lh3.googleusercontent.com/f1XmqHb4jqpkiQ5p_nle0cjifN9UpWIq4nfK4TTTxXFxw00kfkDi3_lRfT8f2p04K6o65Io7Ru1oQfwlwgLHhgW427jBhqMQs2UNacQIyYwqXhZKO4EOzzOU7349TVu4lXVrzPpEHQ=w2400"> <br>
@@ -160,7 +369,7 @@
       </div>
 
 
-      		<!-- Shakti Sandwich ------->
+      		<!-- Shakti Sandwich -------
       <div class="xl:w-1/3 md:w-1/2 p-4">
         <div class="border border-gray-200 p-6 rounded-lg rest-ctn">
             <img alt="problem downloading the image" src="https://lh3.googleusercontent.com/trx_3M-V7C2Vs8zrRg-PcRjwSKm655T6QU-G_AnnJp5jVVPWLZNpaSqnaxIN13KN9S0eZEAof52_ueK6y6WuSwbVdw80BQMXY7dy86103XvzTO9HGsnh37G1zfx5Bn7ymsoaZDvkLA=w2400"> <br>
@@ -172,7 +381,7 @@
         </div>
       </div>
 
-      		<!-- Taste City ----->
+      		<!-- Taste City -----
       <div class="xl:w-1/3 md:w-1/2 p-4">
         <div class="border border-gray-200 p-6 rounded-lg rest-ctn">
             <img alt="problem downloading the image" src="https://lh3.googleusercontent.com/ZoAF9tq1SAMEDFmeAiPZopn7c0IV0DRska7ApeFVvORwzF-10ylTKukgrjeIjVPBxWElBMjb6mpRfLwT2OnmWHl1MZV9LxJS7Xkl44wFkSxtkBccHQsrm16DQ2qkjgAqXmVWTxOgMw=w2400"> <br>
@@ -184,7 +393,7 @@
         </div>
       </div>
 	    
-	    <!------------Epitome restaurant------->
+	    <!------------Epitome restaurant-------
 	    
         <div class="xl:w-1/3 md:w-1/2 p-4">
         <div class="border border-gray-200 p-6 rounded-lg rest-ctn">
@@ -197,8 +406,9 @@
         </div>
       </div>
 	    
-	    <!---------------Snaks-------->
+	    <!---------------Snaks--------
         <div class="xl:w-1/3 md:w-1/2 p-4">
+          <a>
         <div class="border border-gray-200 p-6 rounded-lg rest-ctn">
             <img alt="problem downloading the image" src="https://lh3.googleusercontent.com/W6A760wkSxSQeJDmtHws1VwfyUMd7XU18hu-jk31JjtqnZsOGgZxObV3vzWvBhuIUx-yAw4eKXpvk-4iYcFOQNpR4IxQzC496ZpAXsF42sJYNa8uPUx5SR_r5AKYydnZDKKw6e-J4Q=w2400"> <br>
           <h2 class="text-lg text-gray-900 font-medium title-font mb-2">Anagh Snacks & Live Tawa Ice cream</h2>
@@ -206,12 +416,14 @@
           <p class="leading-relaxed text-base text-gray-600">Fast Food, Ice-Cream</p>
           <br>
           <a href="hotels/snaks.html">View Menu</a>
+        </a>
         </div>
-      </div>   
+      </div>  
 	    
-	    
+    
   </div>
-</section>
+</section> -->
+
 
 <!--------------------------------------------------------------------------------------------footer-->
       <footer class="text-gray-600 body-font text-center">
