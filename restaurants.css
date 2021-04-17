@@ -188,3 +188,12 @@ a:link {
   a:active {
 	color: yellow;
   } 
+
+
+.image-size
+{
+  border-radius: 10px;
+  padding: 5px;
+  width: 350px;
+  height: 190px ;
+}
