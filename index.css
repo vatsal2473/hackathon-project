@@ -24,12 +24,12 @@ body{
 }
 
 .navItems:hover{
-	color: grey;
+	color: green;
 	cursor: pointer;
 }
 
 nav a:active{
-	color: black;
+	color: grey;
 }
 
     /*Home Section */
